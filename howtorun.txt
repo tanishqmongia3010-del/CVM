@@ -1,6 +1,5 @@
 
-REQUIREMENTS
-------------
+REQUIREMENTS:-
   - A C++ compiler that supports C++14 or later (g++ recommended)
   - A terminal (Linux / macOS / Windows with MinGW or WSL)
 
@@ -59,7 +58,7 @@ STEP 3 — RUN MODES
      print x + y;
 
 3. DEBUG FLAGS (optional — show internals)
-   ----------------------------------------
+
    Show the token list:
      ./cvm myscript.cvm --tokens
 
@@ -82,8 +81,11 @@ STEP 4 — CVM++ LANGUAGE CHEAT SHEET
   Operators:              + - * /  == > < >= <=
   Comments:               // this is a comment
 
-EXAMPLE PROGRAM — countdown.cvm
 
+
+
+
+EXAMPLE PROGRAM — countdown.cvm
 
   let x = 5;
   while (x > 0) {
@@ -99,5 +101,3 @@ NOTE:
 On Windows with MinGW, replace "./cvm" with "cvm.exe":
   g++ -std=c++17 main.cpp -o cvm.exe
   cvm.exe myscript.cvm
-
-===============================================================
