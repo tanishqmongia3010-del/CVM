@@ -5,7 +5,7 @@
 #include "headers/parser.hpp"
 #include "headers/vm.hpp"
 using namespace std;
-string readFile(const string &path)
+string read_file(const string &path)
 {
     ifstream file(path);
     if (!file.is_open())
@@ -20,7 +20,7 @@ string readFile(const string &path)
     return buffer.str();
 }
 // for printing tokens
-void printTokens(const string &source)
+void print_tokens(const string &source)
 {
     cout << "\n TOKENS \n";
     Lexer lexer(source);
@@ -33,7 +33,7 @@ void printTokens(const string &source)
     cout << "  [END_OF_FILE]\n";
 }
 // for printing bytecode
-void printBytecode(Chunk *chunk)
+void print_bytecode(Chunk *chunk)
 {
     cout << "\nBYTECODE\n";
     cout << "  Constants:  ";
@@ -145,10 +145,10 @@ void printBytecode(Chunk *chunk)
         cout << "\n";
     }
 }
-void runSource(const string &source, bool showTokens, bool showAST, bool showBytecode)
+void run_source(const string &source, bool show_tokens, bool show_AST, bool show_bytecode)
 {
-    if (showTokens)
-        printTokens(source);
+    if (show_tokens)
+        print_tokens(source);
 
     Parser parser(source);
     unique_ptr<ProgramNode> program = parser.parseprogram();
@@ -158,20 +158,20 @@ void runSource(const string &source, bool showTokens, bool showAST, bool showByt
         return;
     }
 
-    if (showAST)
+    if (show_AST)
     {
         cout << "\n--- AST ---\n";
         program->print();
     }
     Chunk chunk;
     program->compile(&chunk);
-    if (showBytecode)
-        printBytecode(&chunk);
+    if (show_bytecode)
+        print_bytecode(&chunk);
 
     VM vm;
     vm.interpret(&chunk);
 }
-void runREPL()
+void run_REPL()
 {
     cout << "CVM++ REPL  (type 'exit' to quit)\n";
     cout << "Each line must be a complete statement ending in ;\n\n";
@@ -202,25 +202,25 @@ int main(int argc, char **argv)
     // No arguments means start the REPL
     if (argc == 1)
     {
-        runREPL();
+        run_REPL();
         return 0;
     }
     // first argument is a file
-    bool showTokens = false;
-    bool showAST = false;
-    bool showBytecode = false;
+    bool show_tokens = false;
+    bool show_AST = false;
+    bool show_bytecode = false;
     for (int i = 2; i < argc; i++)
     {
         string flag = argv[i];
         if (flag == "--tokens" || flag == "--all")
-            showTokens = true;
+            show_tokens = true;
         if (flag == "--ast" || flag == "--all")
-            showAST = true;
+            show_AST = true;
         if (flag == "--bytecode" || flag == "--all")
-            showBytecode = true;
+            show_bytecode = true;
     }
-    string source = readFile(argv[1]);
+    string source = read_file(argv[1]);
     cout << "Running: " << argv[1] << "\n\n";
-    runSource(source, showTokens, showAST, showBytecode);
+    run_source(source, show_tokens, show_AST, show_bytecode);
     return 0;
 }
