@@ -297,7 +297,6 @@ Runtime errors (undefined variable) print a message and `return` cleanly without
 
 **`main(argc, argv)`** — Argument routing:
 - No args → REPL
-- `--help` → usage
 - `<file.cvm>` → run file, with optional `--tokens`, `--ast`, `--bytecode`, or `--all` flags
 
 ---
