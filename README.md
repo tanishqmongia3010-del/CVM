@@ -285,15 +285,15 @@ Runtime errors (undefined variable) print a message and `return` cleanly without
 
 `main.cpp` is the user-facing shell around all five compiler stages. It has four responsibilities:
 
-**`readFile(path)`** — Opens a `.cvm` file, reads it character by character into a `stringstream`, and returns the full source as a `string`. Exits with an error message if the file cannot be opened.
+**`read_file(path)`** — Opens a `.cvm` file, reads it character by character into a `stringstream`, and returns the full source as a `string`. Exits with an error message if the file cannot be opened.
 
-**`printTokens(source)`** — Creates a fresh `Lexer`, calls `nextToken()` in a loop, and prints each token with its line number. Used for the `--tokens` debug flag.
+**`print_tokens(source)`** — Creates a fresh `Lexer`, calls `nextToken()` in a loop, and prints each token with its line number. Used for the `--tokens` debug flag.
 
-**`printBytecode(chunk)`** — Walks `chunk->code` with a manual index (because instructions have variable byte widths) and pretty-prints every opcode along with its operands. For `OP_CONSTANT` it also shows the actual constant value. Used for the `--bytecode` debug flag.
+**`print_bytecode(chunk)`** — Walks `chunk->code` with a manual index (because instructions have variable byte widths) and pretty-prints every opcode along with its operands. For `OP_CONSTANT` it also shows the actual constant value. Used for the `--bytecode` debug flag.
 
-**`runSource(source, showTokens, showAST, showBytecode)`** — The full pipeline in one function: lex (optionally), parse, optionally print AST, compile, optionally print bytecode, then run on the VM.
+**`run_source(source, show_tokens, show_AST, show_bytecode)`** — The full pipeline in one function: lex (optionally), parse, optionally print AST, compile, optionally print bytecode, then run on the VM.
 
-**`runREPL()`** — Starts an interactive prompt. One `VM` instance is created outside the loop so that **globals persist across lines** — you can `let x = 5;` on one line and `print x;` on the next. Each line is parsed and compiled into a fresh `Chunk` and then interpreted.
+**`run_REPL()`** — Starts an interactive prompt. One `VM` instance is created outside the loop so that **globals persist across lines** — you can `let x = 5;` on one line and `print x;` on the next. Each line is parsed and compiled into a fresh `Chunk` and then interpreted.
 
 **`main(argc, argv)`** — Argument routing:
 - No args → REPL
