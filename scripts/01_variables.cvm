@@ -1,0 +1,23 @@
+//  Test 1 - Variables & Arithmetic
+//  Shows: let, =, +, -, *, /, print
+
+let a = 20;
+let b = 6;
+
+// Basic operations
+print a + b;   // 26
+print a - b;   // 14
+print a * b;   // 120
+print a / b;   // 3  (integer division)
+
+// Updating a variable
+let score = 0;
+score = score + 10;
+score = score + 25;
+score = score - 5;
+print score;   // 30
+
+// Negative numbers
+let temp = -7;
+print temp;         // -7
+print temp + 10;    // 3

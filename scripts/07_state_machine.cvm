@@ -1,0 +1,30 @@
+//  Demo 7 - Traffic Light State Machine
+//  Shows: state variable, if/else as transitions
+//  States:
+//    0 = RED    -> next: GREEN
+//    1 = GREEN  -> next: YELLOW
+//    2 = YELLOW -> next: RED
+//  The machine runs for 9 ticks (3 full cycles)
+
+let state = 0;   // start at RED
+let ticks = 9;
+let t = 0;
+
+while (t < ticks) {
+    print state;   // output current state
+
+    // Transition to next state
+    if (state == 0) {
+        state = 1;   // RED -> GREEN
+    } else {
+        if (state == 1) {
+            state = 2;   // GREEN -> YELLOW
+        } else {
+            state = 0;   // YELLOW -> RED
+        }
+    }
+
+    t = t + 1;
+}
+
+// Expected output: 0 1 2 0 1 2 0 1 2

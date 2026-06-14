@@ -1,0 +1,50 @@
+//  Test 2 - If / Else Conditions
+//  Shows: if, else, ==, >, <, >=, <=
+
+let x = 42;
+
+// Greater than
+if (x > 10) {
+    print 1;   // prints 1 (true)
+} else {
+    print 0;
+}
+
+// Equality check
+if (x == 42) {
+    print 1;   // prints 1 (true)
+} else {
+    print 0;
+}
+
+// Nested if/else — grade classifier
+// 90+ → 4, 70+ → 3, 50+ → 2, else → 1
+let grade = 75;
+if (grade >= 90) {
+    print 4;
+} else {
+    if (grade >= 70) {
+        print 3;   // prints 3
+    } else {
+        if (grade >= 50) {
+            print 2;
+        } else {
+            print 1;
+        }
+    }
+}
+
+// Boolean logic using arithmetic (0=false 1=true)
+let a = 5;
+let b = 10;
+let bothPositive = 1;
+if (a <= 0) {
+    bothPositive = 0;
+} else {
+    if (b <= 0) {
+        bothPositive = 0;
+    } else {
+        bothPositive = 1;
+    }
+}
+print bothPositive;   // 1

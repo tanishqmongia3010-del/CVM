@@ -1,0 +1,32 @@
+//  Test 4 - FizzBuzz (1 to 20)
+//  Shows: nested if/else + modulo via division
+//  Output key:
+//    1  -> Fizz   (divisible by 3)
+//    2  -> Buzz   (divisible by 5)
+//    3  -> FizzBuzz (divisible by both)
+//    N  -> the number itself
+
+// CVM++ has no % operator, so we compute remainder as:
+//   remainder = n - (n / divisor) * divisor
+
+let i = 1;
+while (i <= 20) {
+    let rem3 = i - (i / 3) * 3;
+    let rem5 = i - (i / 5) * 5;
+
+    if (rem3 == 0) {
+        if (rem5 == 0) {
+            print 3;    // FizzBuzz
+        } else {
+            print 1;    // Fizz
+        }
+    } else {
+        if (rem5 == 0) {
+            print 2;    // Buzz
+        } else {
+            print i;    // plain number
+        }
+    }
+
+    i = i + 1;
+}

@@ -1,0 +1,29 @@
+// =============================================
+//  DEMO 8 — Number Guessing Game
+//  Shows: input inside a while loop, comparison
+//
+//  The secret number is 42.
+//  Output codes:
+//    1 → "Too low!  Guess higher."
+//    2 → "Too high! Guess lower."
+//    3 → "Correct!  You win."
+// =============================================
+
+let secret = 42;
+let guess = 0;
+let won = 0;
+
+while (won == 0) {
+    guess = input;
+
+    if (guess == secret) {
+        print 3;      // correct!
+        won = 1;
+    } else {
+        if (guess < secret) {
+            print 1;  // too low
+        } else {
+            print 2;  // too high
+        }
+    }
+}

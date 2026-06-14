@@ -1,0 +1,27 @@
+//  Demo 5 - Power & Fibonacci
+//  Shows: accumulators, multi-variable loops
+// Power: compute 2^10 
+
+let base = 2;
+let exp  = 10;
+let result = 1;
+let i = 0;
+while (i < exp) {
+    result = result * base;
+    i = i + 1;
+}
+print result;   // 1024
+
+//Fibonacci sequence (first 10 terms)
+// 0 1 1 2 3 5 8 13 21 34
+let a = 0;
+let b = 1;
+let count = 10;
+let j = 0;
+while (j < count) {
+    print a;
+    let next = a + b;
+    a = b;
+    b = next;
+    j = j + 1;
+}
