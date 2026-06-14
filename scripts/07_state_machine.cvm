@@ -1,4 +1,4 @@
-//  Demo 7 - Traffic Light State Machine
+//  Test 7 - Traffic Light State Machine
 //  Shows: state variable, if/else as transitions
 //  States:
 //    0 = RED    -> next: GREEN
