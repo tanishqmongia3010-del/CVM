@@ -1,12 +1,10 @@
-
 REQUIREMENTS:-
   - A C++ compiler that supports C++14 or later (g++ recommended)
   - A terminal (Linux / macOS / Windows with MinGW or WSL)
 
----------------------------------------------------------------
-STEP 1 — FOLDER STRUCTURE
----------------------------------------------------------------
 
+
+STEP 1 — FOLDER STRUCTURE:
 Make sure your files are arranged like this:
 
   project/
@@ -19,10 +17,9 @@ Make sure your files are arranged like this:
       └── vm.hpp
 
 
----------------------------------------------------------------
-STEP 2 — COMPILE
----------------------------------------------------------------
 
+
+STEP 2 — COMPILE:
 Open a terminal, navigate to the project folder, and run:
 
   g++ -std=c++17 main.cpp -o cvm
@@ -30,10 +27,8 @@ Open a terminal, navigate to the project folder, and run:
 This creates an executable called "cvm" (or "cvm.exe" on Windows).
 
 
----------------------------------------------------------------
-STEP 3 — RUN MODES
----------------------------------------------------------------
 
+STEP 3 — RUN MODES:
 1. INTERACTIVE REPL (type and run code line by line)
 
    Command:
@@ -71,7 +66,9 @@ STEP 3 — RUN MODES
    Show everything at once:
      ./cvm myscript.cvm --all
 
-STEP 4 — CVM++ LANGUAGE CHEAT SHEET
+
+
+STEP 4 — CVM++ LANGUAGE CHEAT SHEET:
   Declare a variable:     let x = 10;
   Reassign a variable:    x = x + 1;
   Print output:           print x;
