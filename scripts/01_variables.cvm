@@ -21,3 +21,15 @@ print score;   // 30
 let temp = -7;
 print temp;         // -7
 print temp + 10;    // 3
+
+
+
+//Expected Output:
+//
+//26
+//14
+//120
+//3
+//30
+//-7
+//3

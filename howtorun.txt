@@ -52,7 +52,7 @@ STEP 3 — RUN MODES:
      let y = 3;
      print x + y;
 
-3. DEBUG FLAGS (optional — show internals)
+3. DEBUG FLAGS (optional — shows internals)
 
    Show the token list:
      ./cvm myscript.cvm --tokens
