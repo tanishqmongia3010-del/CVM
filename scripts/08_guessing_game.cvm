@@ -1,5 +1,4 @@
-// =============================================
-//  DEMO 8 — Number Guessing Game
+//  Test 8 — Number Guessing Game
 //  Shows: input inside a while loop, comparison
 //
 //  The secret number is 42.
@@ -7,7 +6,7 @@
 //    1 → "Too low!  Guess higher."
 //    2 → "Too high! Guess lower."
 //    3 → "Correct!  You win."
-// =============================================
+
 
 let secret = 42;
 let guess = 0;
